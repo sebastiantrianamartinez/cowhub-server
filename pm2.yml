@@ -1,0 +1,27 @@
+apps:
+  # Nombre de tu aplicación (puedes personalizarlo)
+  mi-app-node:
+    # Script de inicio (asegúrate de que coincida con tu configuración actual)
+    script: "npm run production"
+    # Número de instancias de la aplicación (puedes iniciar varias para balanceo de carga)
+    instances: 1
+    # Directorio de trabajo (donde se encuentra tu código fuente)
+    cwd: "/var/www/public/backend/cowhub"
+    # Puerto de la aplicación (opcional, si se define en el código, no es necesario)
+    # env_port: 8099
+    # Entorno (puedes definir variables de entorno específicas para producción)
+    env:
+      NODE_ENV: production
+      # Otras variables de entorno personalizadas
+      # MI_VARIABLE_PERSONALIZADA: valor
+    # Opciones de logs (redirige la salida estándar y de error a archivos separados)
+    # Si no se configura, PM2 usará la configuración predeterminada
+    # out_file: "out.log"
+    # err_file: "err.log"
+    # Reinicio automático (reinicia la aplicación si se bloquea o falla)
+    # Puedes configurar el tiempo de espera entre reinicios y el número máximo de intentos
+    # restart:
+    #   delay: 10s  # Tiempo de espera antes de reiniciar (10 segundos)
+    #   max_retry: 3  # Número máximo de intentos de reinicio
+
+# Puedes agregar más aplicaciones al archivo siguiendo el mismo formato

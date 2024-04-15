@@ -1,16 +1,40 @@
 {
-  "name": "server",
+  "name": "cowhub",
   "version": "1.0.0",
-  "description": "",
+  "description": "Professional cattle management software",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "production": "node index.js",
+    "docker": "docker-compose up postgres -d && docker-compose up pgadmin -d",
+    "migration:generate": "npx sequelize-cli migration:generate --name",
+    "migrations:run": "npx sequelize-cli db:migrate",
+    "migrations:revert": "npx sequelize-cli db:migrate:undo",
+    "migrations:delete": "npx sequelize-cli db:migrate:undo:all",
+    "docker-production": "docker compose up postgres -d && docker compose up pgadmin -d"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sebastiantrianamartinez/cowhub.git"
+  },
+  "keywords": [
+    "cow",
+    "cowhub",
+    "milk",
+    "software",
+    "management"
+  ],
+  "author": "Trianametria Software",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastiantrianamartinez/cowhub/issues"
+  },
+  "homepage": "https://github.com/sebastiantrianamartinez/cowhub#readme",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "@hapi/boom": "^10.0.1",
+    "express": "^4.19.2",
+    "joi": "^17.12.3",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.2"
   }
 }

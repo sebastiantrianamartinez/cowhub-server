@@ -32,6 +32,7 @@
   "homepage": "https://github.com/sebastiantrianamartinez/cowhub#readme",
   "dependencies": {
     "@hapi/boom": "^10.0.1",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "joi": "^17.12.3",
     "pg": "^8.11.5",

@@ -5,7 +5,7 @@ const productionRouter = require('./production.router');
 
 function routerApi(app){
     const router = express.Router();
-    app.use('/api', router);
+    app.use('/', router);
 
     router.use('/cows', cowsRouter);
     router.use('/bugs', bugsRouter);

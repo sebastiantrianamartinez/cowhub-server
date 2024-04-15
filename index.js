@@ -7,11 +7,19 @@ const routerApi = require('./routes');
 const {errorHandler, boomErrorHandler} = require('./core/middlewares/error.handler');
 
 app.use(express.json());
+
 app.use(cors({
-    origin: 'http://localhost:8096, http://localhost:8021, http://localhost:8021, 127.0.0.1:8021',
+    origin: [
+      'http://localhost:8096',
+      'http://localhost:8021',
+      'http://localhost:8021',
+      'http://127.0.0.1:8021',
+      'http://127.0.0.1',
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
-  }));
+}));
+  
 
 app.get('/', (req, res) => {
     res.json({

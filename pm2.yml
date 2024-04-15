@@ -6,7 +6,7 @@ apps:
     # Número de instancias de la aplicación (puedes iniciar varias para balanceo de carga)
     instances: 1
     # Directorio de trabajo (donde se encuentra tu código fuente)
-    cwd: "/var/www/public/backend/cowhub"
+    cwd: "/var/www/public/cowhub/server"
     # Puerto de la aplicación (opcional, si se define en el código, no es necesario)
     # env_port: 8099
     # Entorno (puedes definir variables de entorno específicas para producción)
